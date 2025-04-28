@@ -12,22 +12,21 @@
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nox, ... }:
-  {
-    # $ darwin-rebuild build --flake .#Murray
-    darwinConfigurations.Murray = inputs.nix-darwin.lib.darwinSystem {
-      specialArgs = { inherit inputs; system = "aarch64-darwin"; };
-      modules = [
-        ./configuration.nix
-        inputs.home-manager.darwinModules.home-manager {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            extraSpecialArgs = { inherit inputs; };
+    let
+      mkMacSystem = import ./lib/mkMacSystem.nix {
+        inherit inputs;
+      };
+    in
+    {
+      # $ darwin-rebuild build --flake .#Murray
+      darwinConfigurations.Max = mkMacSystem {
+        system = "aarch64-darwin";
+        systemConfig = systems/max.nix;
+      };
 
-            users.am_lazytude = import ./home.nix;
-          };
-        }
-      ];
+      darwinConfigurations.Murray = mkMacSystem {
+        system = "aarch64-darwin";
+        systemConfig = systems/murray.nix;
+      };
     };
-  };
 }

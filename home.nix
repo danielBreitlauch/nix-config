@@ -21,7 +21,7 @@
     ./programs/zsh.nix
     # awscli, gh, 
   ];
-  
+
   programs = {
     home-manager.enable = true;
 

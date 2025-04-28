@@ -2,34 +2,26 @@
 
 {
   environment.systemPackages = with pkgs; [
-    inputs.nox.packages.${system}.default
-    nix-health
-    jq
     ack
-    act
-    k3d
-    tfk8s
-
-    devenv
-    wget
-    watch
-    httpie
-    gh
-    ncdu
-    nmap
-    mtr
-    fd
     bat
-    nixpkgs-fmt
-    nil
-    ssh-audit
-    terraformer
-    graphviz
-    tig
+    devenv
+    fd
     gitui
-    wrk
-    zsh-completions
+    inputs.nox.packages.${system}.default
+    mtr
+    ncdu
+    nil
+    nix-health
     nix-zsh-completions
+    nixpkgs-fmt
+    nmap
+    rar
+    ssh-audit
+    tealdeer
+    tig
+    watch
+    wget
+    zsh-completions
   ];
 
   fonts.packages = with pkgs; [
@@ -61,23 +53,16 @@
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
     casks = [
-      "iterm2"
-      "firefox"
-      "rapidapi"
-      "shortcat"
-      "monitorcontrol"
-      "visual-studio-code"
-      "the-unarchiver"
       "bettertouchtool"
-      "bitwarden"
-      "bruno"
-      "discord"
-      "virtualbox"
-      "viscosity"
+      "coconutbattery"
       "docker"
-      "notion"
-      "slack"
-      "linear-linear"
+      "firefox"
+      "iterm2"
+      "monitorcontrol"
+      "shortcat"
+      "the-unarchiver"
+      "viscosity"
+      "visual-studio-code"
     ];
   };
 
@@ -86,21 +71,6 @@
       show-recents = false;
       autohide = true;
       show-process-indicators = false;
-      persistent-apps = [
-        "/System/Applications/Calendar.app"
-        "/System/Applications/Mail.app"
-        "/System/Applications/Reminders.app"
-        "/System/Applications/Notes.app"
-        "/System/Applications/Messages.app"
-        "/Applications/Linear.app"
-        "/Applications/Notion.app"
-        "/Applications/Slack.app"
-        "/Applications/Safari.app"
-        "/Applications/Visual Studio Code.app"
-        "/Applications/iTerm.app"
-        "/System/Applications/System Settings.app"
-        "/System/Applications/Utilities/Activity Monitor.app"
-      ];
     };
 
     finder = {
@@ -121,8 +91,8 @@
       NSWindowShouldDragOnGesture = true;
       "com.apple.keyboard.fnState" = true; # Use F1, F2, etc. keys as standard function keys.
       "com.apple.trackpad.scaling" = 3.0; # speed
-      InitialKeyRepeat = 10;
-      KeyRepeat = 1;
+      InitialKeyRepeat = 15;
+      KeyRepeat = 2;
     };
 
     trackpad = {

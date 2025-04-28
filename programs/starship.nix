@@ -55,12 +55,12 @@
         format = "[$symbol](bright-black) [$context <$namespace>]($style)";
         contexts = [
           {
-            context_pattern = "arn:aws:eks:(?P<region>[^:]+):176291536184:cluster/(?P<cluster>[^/]+)";
+            context_pattern = "arn:aws:eks:(?P<region>[^:]+):176.*:cluster/(?P<cluster>[^/]+)";
             context_alias = "prod $region $cluster";
             style = "bold red";
           }
           {
-            context_pattern = "arn:aws:eks:(?P<region>[^:]+):983594232711:cluster/(?P<cluster>[^/]+)";
+            context_pattern = "arn:aws:eks:(?P<region>[^:]+):983.*:cluster/(?P<cluster>[^/]+)";
             context_alias = "dev $cluster";
             style = "green";
           }

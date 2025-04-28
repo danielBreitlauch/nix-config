@@ -16,7 +16,7 @@
     };
 
 
-    prezto = { 
+    prezto = {
       enable = true;
       editor.dotExpansion = true;
       color = true;
@@ -28,7 +28,7 @@
       ];
 
       syntaxHighlighting.highlighters = [
-         "main"
+        "main"
         "brackets"
         "pattern"
         "line"
