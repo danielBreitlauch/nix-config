@@ -1,9 +1,7 @@
 { inputs }: { system, systemConfig }:
 
 inputs.nix-darwin.lib.darwinSystem {
-  modules = [
-    ../configuration.nix
-    systemConfig
+  modules = systemConfig ++ [
     inputs.home-manager.darwinModules.home-manager
     {
       home-manager = {

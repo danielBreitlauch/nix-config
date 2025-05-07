@@ -21,12 +21,12 @@
       # $ darwin-rebuild build --flake .#Murray
       darwinConfigurations.Max = mkMacSystem {
         system = "aarch64-darwin";
-        systemConfig = systems/max.nix;
+        systemConfig = [ ./configuration.nix systems/max.nix ];
       };
 
       darwinConfigurations.Murray = mkMacSystem {
         system = "aarch64-darwin";
-        systemConfig = systems/murray.nix;
+        systemConfig = [ ./configuration.nix systems/murray.nix ];
       };
     };
 }
