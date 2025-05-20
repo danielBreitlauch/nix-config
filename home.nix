@@ -19,6 +19,7 @@
     ./programs/git.nix
     ./programs/starship.nix
     ./programs/zsh.nix
+    ./programs/eza.nix
     # awscli, gh, 
   ];
 

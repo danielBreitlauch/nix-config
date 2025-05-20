@@ -8,11 +8,12 @@
     '';
     syntaxHighlighting = { enable = true; };
     historySubstringSearch = { enable = true; };
+    history.findNoDups = true;
     enableCompletion = true;
     autosuggestion = { enable = true; };
 
     shellAliases = {
-      kubectl = "kubecolor";
+      k = "kubecolor";
     };
 
 

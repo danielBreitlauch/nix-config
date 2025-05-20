@@ -77,6 +77,7 @@
       AppleShowAllExtensions = true;
       AppleShowAllFiles = true;
       ShowPathbar = true;
+      _FXSortFoldersFirst = true;
       FXEnableExtensionChangeWarning = false;
       FXPreferredViewStyle = "Nlsv"; # List view
       FXDefaultSearchScope = "SCcf"; # When performing a search, search the current folder by default
