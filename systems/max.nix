@@ -21,7 +21,7 @@
     ninja
     openblas
     protobuf
-    #scummvm
+    scummvm
     swig
     tectonic
     vcpkg

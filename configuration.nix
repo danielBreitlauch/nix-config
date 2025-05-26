@@ -31,7 +31,7 @@
   ];
 
   nix = {
-    enable = true;
+    enable = false; # determinate manages Nix
     package = pkgs.nix;
     settings = {
       experimental-features = "nix-command flakes";
@@ -43,6 +43,7 @@
 
   system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
   system.stateVersion = 5;
+  system.primaryUser = config.users.users.am_lazytude.name;
 
   nixpkgs.hostPlatform = "aarch64-darwin";
 
@@ -138,7 +139,7 @@
     };
   };
 
-  system.activationScripts.postUserActivation.text = ''
+  system.activationScripts.postActivation.text = ''
     # Following line should allow us to avoid a logout/login cycle
     /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
   '';
