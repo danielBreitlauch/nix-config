@@ -2,7 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    ack
     bat
     devenv
     fd
@@ -16,11 +15,13 @@
     nixpkgs-fmt
     nmap
     rar
+    ripgrep
     ssh-audit
     tealdeer
     tig
     watch
     wget
+    wireshark
     zsh-completions
   ];
 
